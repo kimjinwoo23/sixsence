@@ -130,7 +130,8 @@
   align-items: center;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 130px;
+  
+  z-index: 1100;
 }
 
 .modal-button {
@@ -229,7 +230,7 @@
 .swiper-pagination-bullets {
   bottom: 10px;
 }
-/* 푸터 스타일 */
+
 
 
 a.info_button,

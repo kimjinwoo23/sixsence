@@ -19,7 +19,7 @@
 }
 
 /* 제목 스타일 */
-h1 {
+.box_section h1 {
   font-size: 24px;
   margin-bottom: 30px;
   color: #333;

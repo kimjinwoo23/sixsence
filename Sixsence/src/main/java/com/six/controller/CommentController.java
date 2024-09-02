@@ -40,6 +40,7 @@ public class CommentController {
     @DeleteMapping("/delete")
     public void deleteComment(@RequestParam(name = "coid") int coid) {
         System.out.println("Deleting comment with coid: " + coid);
+        // 서버에서 coid 값 확인
         commentService.deleteComment(coid);
     }
 }

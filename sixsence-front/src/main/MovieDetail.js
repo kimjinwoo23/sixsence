@@ -33,7 +33,7 @@ const MovieDetail = () => {
 
     // 리뷰 제출 처리
     const handleReviewSubmit = () => {
-        if (!loginMember) { // 로그인 확인
+        if (!loginMember) {
             const shouldNavigate = window.confirm("로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?");
             if (shouldNavigate) {
                 navigate('/memberLogin');
@@ -42,17 +42,15 @@ const MovieDetail = () => {
                 return;
             }
         }
-
         const newReview = {
-            soname: loginMember.memberName || soname, // 로그인된 사용자의 이름 사용
+            soname: loginMember.memberName || soname,
             text: review,
-            score: rating,
+            rating: rating,
             memberNo: loginMember.memberNo
         };
-
-        axios.post(`http://localhost:666/api/comment/insert`, { 
-            movieNo: movieNo, 
-            text: newReview.text, 
+        axios.post(`http://localhost:666/api/comment/insert`, {
+            movieNo: movieNo,
+            text: newReview.text,
             score: newReview.rating,
             soname: newReview.soname,
             memberNo: newReview.memberNo
@@ -63,10 +61,14 @@ const MovieDetail = () => {
                 ...newReview,
                 coid: response.data.coid  // 서버에서 받은 리뷰 ID
             };
-            setReviews(prevReviews => [...prevReviews, addedReview]);
-            setReview("");  
+            // 리뷰를 목록에 추가한 후 전체 리뷰 목록을 다시 불러옵니다.
+            axios.get(`http://localhost:666/api/comment/movie/${movieNo}`)
+                .then(res => {
+                    setReviews(res.data);
+                })
+                .catch(e => alert("코멘트 불러오기 실패"));
+            setReview("");
             setRating(0);
-            setSoname(""); // 폼 초기화
         })
         .catch(e => alert("관람평 제출 실패"));
     };
@@ -78,14 +80,14 @@ const MovieDetail = () => {
             return;
         }
 
-        axios.delete(`http://localhost:666/api/comment/delete`, {
-            params: { coid: coid }
-        })
+        axios.delete(`http://localhost:666/api/comment/delete?coid=${coid}`)
+        
         .then(response => {
+            console.log("Review deleted successfully");
             setReviews(prevReviews => prevReviews.filter(review => review.coid !== coid));
         })
         .catch(error => {
-            console.error("리뷰 삭제 중 오류 발생:", error);
+            console.error("Error deleting review:", error);
         });
     };
 
@@ -166,7 +168,7 @@ const MovieDetail = () => {
                                 {loginMember && loginMember.memberNo === rev.memberNo && (
                                     <button 
                                         className="delete-button" 
-                                        onClick={() => handleDeleteReview(rev.coid, rev.memberNo,rev.text,rev.score,rev.soname)}
+                                        onClick={() => handleDeleteReview(rev.coid, rev.memberNo)}
                                     >
                                         삭제
                                     </button>

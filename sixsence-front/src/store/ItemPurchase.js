@@ -4,11 +4,13 @@ import axios from 'axios';
 import ItemNavigationBar from './ItemNavigationBar';
 import LoginContext from '../login/LoginContext';
 import useItemPayment from '../hooks/useItemPayment';
+import useCart from '../hooks/useCart';
 // 장바구니쪽에서 넘어오는 데이터 1개 이상일 수 있으므로 list형태로 넣어야함
 const ItemPurchase = () => {
     //const { paymentData, setPaymentData } = useItemPayment();
     const { loginMember } = useContext(LoginContext);
     //console.log("itempurchase login : ", loginMember);
+    const { cartItemCount } = useCart();
 
     const location = useLocation();
     //const {itemNo, itemImage, itemName, itempayCount, itempayPrice} = location.state || {};
@@ -140,7 +142,7 @@ const ItemPurchase = () => {
     return (
         <>
         <div className='item-nav'>
-            <ItemNavigationBar />
+            <ItemNavigationBar cartItemCount={cartItemCount} />
         </div>
         <div className='item-payment-contain'>
             <div className='item-payment-order-info'>
