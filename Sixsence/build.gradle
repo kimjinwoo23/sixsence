@@ -1,0 +1,108 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.3'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.six'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-json'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+
+}
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+// 리엑트에서 가져온 build 폴더 경로 확인
+def reactBuildDir = "$projectDir/src/main/build"
+// 리소스 밑에 html css js 파일을 갖다놓겠다 하기 위해 위치 지정
+sourceSets {
+    main {
+       resources {
+          srcDirs = ["$projectDir/src/main/resources"]
+       }
+    }
+}
+// 파일 복사하는 코드 작성 script 코드 자바와 자바스크립트와 별개의 언어
+task copyReactFiles(type: Copy) {
+    from "$reactBuildDir"
+    into "$buildDir/resources/main/static"
+}
+// 순서대로 작성된 기능 진행하기 copyReactFiles(복사해서 갖다놓기) 기능만
+processResources {
+    dependsOn copyReactFiles
+}
+
+def reactAppDir = "$projectDir/src/main/sixsence-front"
+
+sourceSets {
+    main {
+       resources {
+          srcDirs = ["$projectDir/src/main/resources"]
+       }
+    }
+}
+
+processResources {
+    dependsOn "copyReactFile"
+}
+
+task installReact(type: Exec) {
+    workingDir "$reactAppDir"
+    inputs.dir "$reactAppDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+       commandLine "npm.cmd", "audit", "fix"
+       commandLine 'npm.cmd', 'install'
+    } else {
+       commandLine "npm", "audit", "fix"
+       commandLine 'npm', 'install'
+    }
+}
+
+task buildReact(type: Exec) {
+    dependsOn "installReact"
+    workingDir "$reactAppDir"
+    inputs.dir "$reactAppDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+       commandLine "npm.cmd", "run-script", "build"
+    } else {
+       commandLine "npm", "run-script", "build"
+    }
+}
+
+task copyReactFile(type: Copy) {
+    dependsOn "buildReact"
+    from "$reactAppDir/build"
+    into "$buildDir/resources/main/static"
+}

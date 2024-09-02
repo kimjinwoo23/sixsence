@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.six.mapper.MypageMapper">
+	<select id="getMovieList" resultType="com.six.dto.Moviepay">
+		select * from moviepay
+		where member_no = #{memberNo}
+	</select>
+	
+	<select id="getMovieAll" resultType="com.six.dto.Movie">
+		select * from movie
+	</select>
+	
+	<update id="cancelReservation" parameterType="int">
+		update moviepay
+		set moviepay_refund = 'Y'
+		where moviepay_no = #{moviepayNo}
+	</update>
+	
+	<update id="returnPointY" parameterType="com.six.dto.Moviepay">
+		update member
+		set member_payCount = member_payCount - 1, member_point = member_point + #{moviepayPoint}
+		where member_no = #{memberNo}
+	</update>
+	
+	<update id="returnPointN" parameterType="com.six.dto.Moviepay">
+		update member
+		set member_payCount = member_payCount - 1, member_point = member_point - (#{moviepayPrice} / 10)
+		where member_no = #{memberNo}
+	</update>
+	
+	<select id="getItempayList" parameterType="int" resultType="com.six.dto.ItempayMypage">
+		select ip.itempay_no, i.item_image, i.item_name, ip.itempay_date, ip.itempay_price, ip.itempay_count, ip.itempay_buyer, ip.itempay_email, ip.itempay_receipt, ip.itempay_point_use, ip.itempay_point, ip.member_no, m.member_grade
+		from itempay ip 
+		left join item i on ip.item_no = i.item_no
+		left join member m on ip.member_no = m.member_no
+		where ip.member_no = #{memberNo}
+		and ip.itempay_refund = 'N'
+	</select>
+	
+	<update id="cancelItempay" parameterType="int">
+		update itempay
+		set itempay_refund = 'Y'
+		where itempay_no = #{itempayNo}
+	</update>
+	
+	<update id="returnPointYItem" parameterType="com.six.dto.ItempayMypage">
+		update member
+		set member_point = member_point + #{itempayPoint}
+		where member_no = #{memberNo}
+	</update>
+	
+	<update id="returnPointNItemNew" parameterType="com.six.dto.ItempayMypage">
+		update member
+		set member_point = member_point - (#{itempayPrice} / 20)
+		where member_no = #{memberNo}
+	</update>
+	
+	<update id="returnPointNItemVip" parameterType="com.six.dto.ItempayMypage">
+		update member
+		set member_point = member_point - (#{itempayPrice} / 10)
+		where member_no = #{memberNo}
+	</update>
+	
+	<select id="getRefundItempayList" parameterType="int" resultType="com.six.dto.ItempayMypage">
+		select ip.itempay_no, i.item_image, i.item_name, ip.itempay_date, ip.itempay_price, ip.itempay_count, ip.itempay_buyer, ip.itempay_email, ip.itempay_receipt, ip.itempay_point
+		from itempay ip 
+		left join item i on ip.item_no = i.item_no
+		where ip.member_no = #{memberNo}
+		and ip.itempay_refund = 'Y'
+	</select>
+	
+	<select id="getRefundMovieList" resultType="com.six.dto.Moviepay">
+		select * from moviepay
+		where member_no = #{memberNo}
+		and moviepay_refund = 'Y'
+	</select>
+	
+	<delete id="deleteAccount" parameterType="int">
+		delete from member
+		where member_no = #{memberNo}
+	</delete>
+	
+	<select id="getMemberObo" parameterType="int">
+		select * from obo
+		where member_no = #{memberNo}
+		order by obo_no desc
+	</select>
+	
+	<delete id="deleteObo" parameterType="int">
+		delete from obo
+		where obo_no = #{oboNo}
+	</delete>
+	
+	<select id="getLoginMember" parameterType="int" resultType="com.six.dto.Member">
+		select * from member
+		where member_no = #{memberNo}
+	</select>
+	
+	<update id="updateGrade" parameterType="com.six.dto.Member">
+		update member
+		set member_grade = #{memberGrade}
+		where member_no = #{memberNo}
+	</update>
+	
+	<update id="editMember" parameterType="com.six.dto.Member">
+		update member
+		set member_phone = #{memberPhone}, member_pw = #{memberPw}, member_pwCheck = #{memberPwCheck}, member_address = #{memberAddress}
+		where member_no = #{memberNo}
+	</update>
+	
+	<select id="getCommentMypage" parameterType="int" resultType="com.six.dto.CommentMypage">
+		select c.coid, m.movie_image, c.score, c.text
+		from comment c
+		left join movie m on c.movie_no = m.movie_no 
+		where member_no = #{memberNo}
+		order by c.coid desc
+	</select>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete from comment
+		where coid = #{coid}
+	</delete>
+</mapper>

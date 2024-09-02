@@ -1,0 +1,62 @@
+.container-admin {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.admin-table-responsive {
+  margin-top: 20px;
+}
+
+.admin-button {
+  position: absolute;
+  top: -50px; /* 버튼을 위로 이동 */
+  right: -50px; /* 버튼을 왼쪽으로 이동 */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #add8e6; /* 옅은 하늘색 배경 */
+  color: #fff; /* 글자색: 흰색 */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-button a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.admin-button:hover {
+  background-color: #87ceeb;
+}
+
+.admin-table-responsive th, .admin-table-responsive td {
+  padding: 18px 15px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+.admin-table-responsive th {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 2px solid #000000;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.admin-table-responsive td a {
+  color: #3a3a3b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-table-responsive td a:hover  {
+  text-decoration: underline;
+}

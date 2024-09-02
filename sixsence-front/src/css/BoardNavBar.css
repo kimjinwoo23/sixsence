@@ -1,0 +1,59 @@
+.boardNavi-container{
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+.boardNavi-container h1 {
+  margin-left: 10px;
+  text-align: left; 
+  font-size: 32px;
+  font-weight: bold; /* 글씨를 더 두껍게 */
+}
+.board-naven {
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* 상단 헤더와의 간격 */
+  max-width: 1200px; /* 전체 가로 크기를 키움 */
+  margin: 0 auto;
+}
+.board-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around; /* 메뉴 항목을 균등하게 배치 */
+}
+.board-li {
+  margin-right: 20px;
+}
+.board-naven ul li a {
+  color: black; 
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  position: relative;
+}
+.board-naven ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black; 
+  transition: width 0.3s ease;
+}
+.board-naven ul li a:hover::after,
+.board-naven ul li a.active::after {
+  width: 100%; 
+}
+.board-naven ul li a.active {
+  background-color: #007BFF; 
+  border-radius: 4px;
+}
+.board-naven ul li a:hover {
+  background-color: #007BFF; 
+  border-radius: 5px;
+}

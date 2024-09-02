@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.six.mapper.PostMapper">
+<!-- select 전체 게시글 보기 SQL -->
+ <select id="findAll" resultType="com.six.dto.Post">
+    SELECT post_no, post_title, post_count, post_createDate
+    FROM post ORDER BY post_no DESC
+  </select>
+  
+  <!-- 특정 게시글 보기 -->
+  <select id="findPostById" parameterType="int" resultType="com.six.dto.Post">
+   SELECT * FROM Post WHERE post_no = #{postNo}
+  </select>
+ 
+   <!-- 공지사항 글쓰기 -->
+   <insert id="writeCompleted" parameterType="com.six.dto.Post">
+   INSERT INTO post (post_title, post_content)
+   VALUES (#{postTitle}, #{postContent})
+</insert>
+
+<!-- 조회 수 증가 -->
+ <update id="incrementViewCount">
+  UPDATE post
+  SET post_count = post_count + 1
+  WHERE post_no = #{postNo}
+ </update>
+ 
+<!-- 공지사항 수정하기 -->
+<update id="boardUpdate" parameterType="com.six.dto.Post">
+  UPDATE post
+  SET post_title = #{postTitle},
+      post_content = #{postContent}
+  WHERE post_no = #{postNo}
+</update>
+
+<!-- 공지사항 삭제하기 -->
+<delete id="postDelete">
+ DELETE FROM Post
+ WHERE post_no = #{postNo}
+</delete>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.six.mapper.CartMapper">
+	<insert id="insertCart" parameterType="com.six.dto.Cart">
+		INSERT INTO shopping (item_no, member_no, shopping_count, shopping_price)
+		VALUES (#{itemNo}, #{memberNo}, #{shoppingCount}, #{shoppingPrice})
+	</insert>
+
+	<select id="getUserCartItems" resultType="com.six.dto.Cart">
+		SELECT s.member_no, s.shopping_no, s.item_no, s.shopping_count, s.shopping_price, i.item_image, i.item_name, i.item_package, i.item_price
+		FROM shopping s
+				 JOIN item i ON s.item_no = i.item_no
+		WHERE s.member_no = #{memberNo}
+	</select>
+
+	<update id="updateCartItem" parameterType="com.six.dto.Cart">
+		UPDATE shopping
+		SET shopping_count = #{shoppingCount},
+			shopping_price = #{shoppingPrice}
+		WHERE shopping_no = #{shoppingNo}
+	</update>
+
+	<delete id="deleteCartItem" parameterType="com.six.dto.Cart">
+		DELETE FROM shopping
+		WHERE shopping_no = #{shoppingNo}
+	</delete>
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.six.mapper.MemberMapper">
+    <!--  회원가입 INSERT 등록  -->
+    <insert id="memberSignUp" parameterType="Member" useGeneratedKeys="true" keyProperty="memberNo">
+
+        INSERT INTO member(member_no ,member_id, member_pw, member_pwCheck, member_name, member_age,
+                           member_gender, member_birth, member_email, member_address, member_phone,
+                           member_payCount, member_grade, member_point)
+        VALUES(#{memberNo} ,#{memberId},#{memberPw},#{memberPwCheck},#{memberName},#{memberAge},
+               #{memberGender},#{memberBirth},#{memberEmail},#{memberAddress},#{memberPhone},0,"NEW",0)
+
+    </insert>
+    <!--  아이디 중복 검사  -->
+    <select id="memberIdCheck">
+        SELECT COUNT(*)
+        FROM member
+        WHERE member_id = #{memberId}
+    </select>
+    <!--  이메일 중복 검사  -->
+    <select id="memberEmailCheck">
+        SELECT COUNT(*)
+        FROM member
+        WHERE member_email = #{memberEmail}
+    </select>
+    <!-- 로그인 할 때 DB 아이디와 비밀번호가 일치하는지 확인 -->
+    <select id="memberLogin" resultType="Member">
+        SELECT * FROM member
+        WHERE member_id = #{memberId}
+          AND member_pw = #{memberPw}
+    </select>
+
+    <!-- 가입된 회원정보가 존재하는지 확인 (이름, 주민등록번호, 전화번호 일치 확인)  -->
+    <select id="registerCheck" resultType="com.six.dto.Member">
+        SELECT * FROM member
+        WHERE member_name = #{memberName}
+          AND member_birth = #{memberBirth}
+          AND member_phone = #{memberPhone}
+    </select>
+
+    <!-- ID 찾기 (이름, 주민등록번호, 전화번호 일치하는 회원의 ID 조회) -->
+    <select id="memberIdFind" resultType="com.six.dto.Member">
+        SELECT * FROM member
+        WHERE member_name = #{memberName}
+          AND member_birth = #{memberBirth}
+          AND member_phone = #{memberPhone}
+    </select>
+
+    <!-- 비밀번호 찾기 (아이디, 주민등록번호, 전화번호 일치하는 회원 조회하는 과정) -->
+    <select id="memberInfoFind" resultType="com.six.dto.Member">
+        SELECT * FROM member
+        WHERE member_id = #{memberId}
+          AND member_birth = #{memberBirth}
+          AND member_phone = #{memberPhone}
+    </select>
+
+    <!-- 비밀번호 변경 !!! Email이 일치하는 회원기준!-->
+    <update id="updatePassword" parameterType="com.six.dto.Member">
+        UPDATE member
+        SET member_pw = #{memberPw},
+        member_pwCheck = #{memberPwCheck}
+        WHERE member_email = #{memberEmail}
+    </update>
+
+      <!-- <update id="updatePoint" parameterType="int"> -->
+    <update id="updatePoint" parameterType="map">
+    	UPDATE member
+        SET member_point = #{memberPoint}
+        WHERE member_no = #{memberNo}
+    </update>
+
+</mapper>

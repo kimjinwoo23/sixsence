@@ -1,0 +1,83 @@
+
+
+.obo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 200px;
+}
+
+.form-horizontal {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.col-form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: #333;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+}
+
+#inquiryType, #userName, #userPhone, #userEmail, #inquiryTitle, #inquiryContent {
+  margin-bottom: 15px;
+}
+
+#inquiryContent {
+  resize: vertical;
+}
+
+  .obo-button{
+    background-color: #6bacee;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+
+  }
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.bbt1 {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+
+}

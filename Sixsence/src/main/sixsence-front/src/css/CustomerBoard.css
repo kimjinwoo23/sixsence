@@ -1,0 +1,132 @@
+.customer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tablee {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.tablee th, .tablee td {
+  padding: 18px 15px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+.tablee th {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 2px solid #000000;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.tablee th.active{
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-hover tbody tr:hover td {
+  color: #007bff;
+}
+
+.tablee td a {
+  color: #3a3a3b;
+  text-decoration: none;
+
+}
+
+.tablee td a:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #add8e6;
+  border-color: skyblue ;
+}
+
+.pagination .page-link {
+  color: #007bff;
+}
+
+.pagination .page-link:hover {
+  color: #0056b3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 3rem;
+  margin-top: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.search-box {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.write-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #add8e6; /* 옅은 하늘색 배경 */
+  color: #fff; /* 글자색: 흰색 */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none; /* 링크 밑줄 제거 */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 부드러운 배경색 전환 */
+}
+
+.write-button:hover {
+  background-color: #87ceeb; /*  더 진한 하늘색 */
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.pagination li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.pagination li.active a {
+  font-weight: bold;
+  color: #495057;
+}
+
+.pagination li a:hover {
+  color: #0056b3;
+}

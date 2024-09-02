@@ -1,0 +1,84 @@
+/* 전체 페이지 컨테이너 스타일링 */
+.login-check-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0e0c18, #d9e2ec);
+    padding: 20px;
+}
+
+/* 카드 스타일링 */
+.login-check-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 제목 스타일링 */
+.login-check-heading {
+    font-size: 3rem; /* 제목의 크기 설정 */
+    color: #333; /* 글씨 색상 */
+    margin-bottom: 20px; /* 아래쪽 여백 */
+    font-weight: 900; /* 글씨 두께 설정 */
+    font-family: 'Roboto', sans-serif; /* 세련된 서체 사용 */
+    text-transform: uppercase; /* 대문자 변환 */
+    letter-spacing: 1px; /* 글자 간격 조절 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 텍스트 그림자 추가 */
+    background: linear-gradient(135deg, #deeaf9, #44665a);
+    
+    padding: 15px; /* 패딩 추가 */
+    border-radius: 10px; /* 둥근 모서리 */
+}
+
+/* 인사말 스타일링 */
+.login-check-message {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* 안내 메시지 스타일링 */
+.login-check-instruction {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 25px;
+}
+
+/* 버튼 그룹 스타일링 */
+.login-check-button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 공통 버튼 스타일링 */
+.login-check-btn {
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-check-btn:hover {
+    background-color: rgb(43, 39, 39);
+    transform: scale(1.05);
+}
+
+/* 홈 버튼에 추가 스타일 적용 */
+.login-check-home-btn {
+    background-color: black;
+}
+
+.login-check-home-btn:hover {
+    background-color: rgb(43, 39, 39);
+}

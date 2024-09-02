@@ -1,0 +1,606 @@
+/*** Mypage 메인 CSS ***/
+.mypageContainer {
+  width: 90%;
+  margin: 20px auto;
+  margin-bottom: 170px;
+}
+
+.mypageUserForm {
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  justify-content: center;
+  box-sizing: content-box;
+}
+
+.mypageUserForm .mypageGrade {
+  display: inline;
+  padding: 5px 10px;
+  background-color: gray;
+  border-radius: 15px;
+  color: white;
+}
+
+.mypageUserForm .mypageWelcome,
+.mypagePoint {
+  margin: 10px 0;
+  font-weight: bolder;
+  color: black;
+}
+
+/*** Mypage 네비바 CSS ***/
+.mypageNav {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.mypageNav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.mypageNav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #adadad;
+}
+
+.mypageNav ul li a:hover {
+  color: black;
+}
+
+.mypageNav ul li .active {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+/*** Mypage 내역 공통 CSS ***/
+.contentMainContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.contentMainContainer .outBox {
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentMainContainer .outBox .inBox p {
+  font-size: x-large;
+  font-weight: bolder;
+  color: black;
+}
+
+.contentMainContainer .outBox .inBox img {
+  width: 75px;
+  height: 75px;
+}
+
+.contentMainContainer .outBox .inBox .oboImg {
+  background-color: rgb(238, 214, 175);
+  border-radius: 10px;
+}
+
+/*** Mypage 회원탈퇴 CSS ***/
+.contentMainContainer .outBox .inBox .checkPwBox {
+  padding: 50px 100px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.contentMainContainer .outBox .inBox .checkPwBtn {
+  margin-top: 20px;
+  padding: 1px 20px;
+}
+
+.contentMainContainer .outBox .inBox .delContentBox {
+  width: 600px;
+  height: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.contentMainContainer .outBox .inBox .delContentBox h5 {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.contentMainContainer .outBox .inBox .delContentBox p {
+  color: rgb(70, 70, 70);
+  font-weight: 100;
+  font-size: medium;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.contentMainContainer .outBox .inBox .delBtn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0px;
+  margin-top: 20px;
+}
+
+.contentMainContainer .outBox .inBox .delBtn:active {
+  box-shadow: -2px -2px 0px;
+}
+
+/*** Mypage 예매내역 CSS ***/
+.reservationListBox {
+  width: 95%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.reservationListBox .listBox {
+  width: 100%;
+  height: 110px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  margin-bottom: 20px;
+  box-sizing: content-box;
+}
+
+.reservationListBox .listBox .area1 {
+  width: 115px;
+  margin-right: 20px;
+}
+
+.reservationListBox .listBox .area1 small {
+  color: #5a5a5a;
+}
+
+.reservationListBox .listBox .area2 {
+  width: 100px;
+}
+
+.reservationListBox .listBox .area2 img {
+  width: 75px;
+  height: 110px;
+  margin: auto;
+}
+
+.reservationListBox .listBox .area3 {
+  width: 60%;
+}
+
+.reservationListBox .listBox .area3 .movieTitle {
+  font-size: large;
+}
+
+.reservationListBox .listBox .area3 b {
+  font-size: small;
+}
+
+.reservationListBox .listBox .area4 {
+  width: 140px;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.reservationListBox .listBox .area4 .mypageBtn {
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/** Modal 창 CSS **/
+.modalBtn {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: right;
+}
+
+.modalBtn .mypageModal {
+  padding: 5px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-sizing: content-box;
+}
+
+/*** Mypage 구매, 취소내역 CSS ***/
+.boughtContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.boughtContainer .contentContainer {
+  width: 38.5%;
+}
+
+.boughtContainer .contentContainer h2 {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.boughtContainer .contentContainer .outBox {
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.boughtContainer .contentContainer .outBox .inBox p {
+  font-size: x-large;
+  font-weight: bolder;
+  color: black;
+}
+
+.boughtContainer .contentContainer .outBox .inBox img {
+  width: 75px;
+  height: 75px;
+}
+
+.boughtListBox {
+  width: 100%;
+  height: 100%;
+}
+
+.boughtListBox .listBox {
+  width: 92%;
+  height: 110px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  margin-bottom: 7px;
+  box-sizing: content-box;
+}
+
+.boughtListBox .listBox .area1 {
+  width: 90px;
+}
+
+.boughtListBox .listBox .area1 small {
+  color: #5a5a5a;
+}
+
+.boughtListBox .listBox .area2 {
+  width: 80px;
+  margin-right: 5px;
+}
+
+.boughtListBox .listBox .area2 img {
+  width: 75px;
+  height: 110px;
+  margin: auto;
+}
+
+.boughtListBox .listBox .area3 {
+  width: 280px;
+}
+
+.boughtListBox .listBox .area3 .titlediv {
+  width: 280px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.boughtListBox .listBox .area3 .titlediv .listTitle {
+  font-size: large;
+}
+
+.boughtListBox .listBox .area3 b {
+  font-size: small;
+}
+
+.boughtListBox .listBox .area4 {
+  width: 100px;
+  padding-top: 10px;
+  text-align: end;
+}
+
+.boughtListBox .listBox .area4 .mypageBtn {
+  padding: 5px 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/*** OBO 관련 CSS ***/
+.oboListbox {
+  width: 100%;
+  height: 100%;
+}
+
+.oboListbox .oboCategory {
+  margin-top: 50px;
+}
+
+.oboListbox .oboCategory hr {
+  border: 1px solid;
+}
+
+.oboListbox .oboCategory p {
+  color: black;
+  padding: 5px;
+  margin-bottom: 0;
+}
+.oboListbox .oboCategory .oboCategoryBox,
+.oboListbox .listBox {
+  display: flex;
+}
+
+.oboListbox .listBox {
+  padding: 0px 5px;
+}
+
+.oboCol1,
+.oboCol2,
+.oboCol3,
+.oboCol5,
+.oboCol6 {
+  width: 10%;
+  text-align: center;
+}
+
+.oboCol4 {
+  width: 50%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.oboCol4:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.oboCol4Title {
+  width: 50%;
+  text-align: center;
+}
+
+.contentMainContainer .oboBtn {
+  margin-left: 90.5%;
+}
+
+.oboDetailMainContainer {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.oboDetailMainContainer .oboDetailheader {
+  background-color: #d8d8d87e;
+  height: 50px;
+  padding: 10px 50px;
+}
+
+.oboDetailMainContainer .oboDetailheader p {
+  color: black;
+}
+
+.oboDetailMainContainer .oboDetailBody {
+  display: flex;
+}
+
+.oboDetailMainContainer .oboDetailBody .oboDetailBodyMain {
+  width: 80%;
+  padding-top: 30px;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
+.oboDetailMainContainer .oboDetailBody .oboDetailBodyMain .oboDetailBodyTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.oboDetailMainContainer
+  .oboDetailBody
+  .oboDetailBodyMain
+  .oboDetailBodyTitle
+  img,
+.oboDetailMainContainer .oboDetailAnswer .oboDetailAnswerImg img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.oboDetailMainContainer
+  .oboDetailBody
+  .oboDetailBodyMain
+  .oboDetailBodyContent {
+  padding-left: 50px;
+}
+
+.oboDetailMainContainer
+  .oboDetailBody
+  .oboDetailBodyMain
+  .oboDetailBodyContent
+  pre,
+.oboDetailMainContainer .oboDetailAnswer .oboDetailAnswerText pre {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.oboDetailMainContainer .oboDetailBody .oboDetailBodySub {
+  width: 20%;
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+.oboDetailMainContainer .oboDetailBody .oboDetailBodySub .oboDetailBodyDate {
+  text-align: right;
+  color: #838383;
+}
+
+.oboDetailMainContainer .oboDetailBody .oboDetailBodySub .oboDetailBodyStatus {
+  background-color: rgb(75, 75, 75);
+  text-align: center;
+  border: none;
+  border-radius: 40px;
+  width: 100px;
+  height: 40px;
+  padding-top: 8px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.oboDetailMainContainer
+  .oboDetailBody
+  .oboDetailBodySub
+  .oboDetailBodyStatus
+  p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+}
+
+.oboDetailMainContainer hr {
+  margin: 0;
+}
+
+.oboDetailMainContainer .oboDetailAnswer {
+  padding-top: 30px;
+  padding-left: 50px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.oboDetailMainContainer .oboDetailAnswer .oboDetailAnswerText {
+  width: 726px;
+}
+
+.contentMainContainer .oboDetailBtnBox {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contentMainContainer .oboDetailBtnBox .oboBtn1 {
+  margin-right: 10px;
+}
+
+.contentMainContainer .oboDetailBtnBox button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.contentMainContainer .oboDetailBtnBox button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+/*** 회원정보변경 관련 CSS ***/
+.editMemberContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.editMemberContainer h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.editMemberContainer .editMemberTable {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-top: 2px solid gray;
+}
+
+.editMemberContainer .editMemberTable .editMemberTdLeft {
+  background-color: #eef1f8;
+  width: 20%;
+}
+
+.editMemberContainer .editMemberTable .editAttrPw {
+    height: 110px;
+}
+
+.editMemberContainer .editMemberTable .editMemberTdRight {
+  text-align: left;
+  width: 80%;
+  padding-left: 30px;
+}
+
+.editMemberContainer .editMemberTable .editMemberTdRight .inputPw {
+    background-color: #e6e6e6;
+    border: none;
+    color: gray;
+    padding: 0px 10px;
+    width: 70%;
+    outline: none;
+    font-size: 0.9em;
+}
+
+.editMemberContainer .editMemberTable .editAttrAdress input:first-child {
+    width: 30%;
+    margin-right: 10px;
+    outline: none;
+}
+
+.editMemberContainer .editMemberTable .editAttrAdress input:last-child {
+    width: 50%;
+    outline: none;
+    margin-top: 10px;
+}
+
+.editMemberContainer .editMemberTable .editAttrAdress button {
+    padding: 4px 5px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .editMemberContainer .editMemberTable .editAttrAdress button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .editMemberContainer .editBtnBox {
+    text-align: center;
+  }
+
+  .editMemberContainer .editBtnBox .editMainBtn {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .editMemberContainer .editBtnBox .editMainBtn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .editMemberContainer .editBtnBox .editMainBtn:last-child {
+    margin-left: 20px;
+  }

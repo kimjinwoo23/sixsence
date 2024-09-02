@@ -1,0 +1,89 @@
+/* 기본적인 레이아웃 설정 */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.box_section {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 제목 스타일 */
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* 결제 방법 버튼 스타일 */
+#payment-method {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.button2 {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button2.active {
+  background-color: #3182f6;;
+  color: white;
+  border-color: #3182f6;
+}
+
+.button2:hover {
+  background-color: #ddd;
+}
+
+/* 결제하기 버튼 스타일 */
+.button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+  .box_section {
+    padding: 20px;
+  }
+
+  .button2 {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}

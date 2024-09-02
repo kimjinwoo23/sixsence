@@ -1,0 +1,133 @@
+.customer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.board-table  {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.board-table  th, .board-table  td {
+  padding: 18px 15px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+.board-table  th {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 2px solid #000000;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.board-table  th.active{
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-hover tbody tr:hover td {
+  color: #007bff;
+}
+
+.board-table  td a {
+  color: #3a3a3b;
+  text-decoration: none;
+
+}
+
+.board-table td a:hover {
+  text-decoration: underline;
+}
+
+.board-page {
+  margin-top: 20px;
+}
+
+.board-page .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: skyblue ;
+  color: #ccc
+}
+
+.board-page .page-link {
+  color: #007bff;
+}
+
+.board-page .page-link:hover {
+  color: #0056b3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.board-gj {
+  margin-bottom: 3rem;
+  margin-top: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.search-box {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.write-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0078ff; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.write-button:hover {
+  background-color: #87ceeb; /*  더 진한 하늘색 */
+}
+.board-page {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.board-page li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.board-page li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.board-page li.active a {
+  font-weight: bold;
+  color: #495057;
+}
+
+.board-page li a:hover {
+  color: #0056b3;
+}

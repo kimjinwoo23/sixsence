@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.six.mapper.Moviemapper">
+
+	<select id="getAllMovie" parameterType="String" resultType="com.six.dto.Movie">
+		select movie_title,movie_image,movie_no from movie
+	</select>
+
+    <select id="findAll" parameterType="int" resultType="com.six.dto.Movie">
+        SELECT  movie_title, movie_grade, movie_showtime, movie_cast, 
+               movie_story, movie_genre, movie_image 
+        FROM movie 
+        WHERE movie_no = #{movieNo}
+    </select>
+</mapper>
