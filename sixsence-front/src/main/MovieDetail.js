@@ -115,7 +115,7 @@ const MovieDetail = () => {
                     <div className='grade'>관람 등급: {moviedata.movieGrade}</div>
                     <div className='showtime'>상영 시간: {moviedata.movieShowtime}</div>
                     <div className='story'>스토리: {moviedata.movieStory}</div>
-                    <button className="booking-button">예매하기</button>
+                    <a href={`/Movieboard-app?movieId=${movieNo}`} className="detail-button">예매하기</a>
                 </div>
             </div>
 

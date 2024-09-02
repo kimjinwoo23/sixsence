@@ -5,12 +5,12 @@
     padding: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    
+    margin-bottom: 170px;
 }
 
 .moviechart-movies img {
     width: 100%;
-    height: auto%;
+    height: auto;
     border-radius: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
