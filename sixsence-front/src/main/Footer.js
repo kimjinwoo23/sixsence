@@ -19,7 +19,7 @@ function Footer() {
         </ul>
       </div>
       <div className="footer-brand">
-        &copy; SixSence, Final Projent
+        &copy; SixSence, Final Project
       </div>
     </div>
   </footer>
