@@ -1,0 +1,48 @@
+
+.promise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 170px;
+}
+.usetermList-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.usetermList-box {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.usetermList-box:hover {
+  background-color: #e9ecef;
+}
+
+.useterm-content {
+  margin-top: 30px;
+}
+
+.useterm-section {
+  margin-bottom: 50px;
+}
+
+.useterm-section h3 {
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 400;
+}
+
+.useterm-section p {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  color: gray;
+}

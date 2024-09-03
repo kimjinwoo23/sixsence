@@ -1,0 +1,42 @@
+.admin-answer-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+  perspective: 1000px;
+}
+
+.admin-answer-container p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+  line-height: 3.5; /* 라인별 세로 크기 조정 */
+  margin: 10px 0;
+}
+
+.admin-answer-container textarea {
+  width: 91%;
+  resize: none;
+  border: 1px solid #333;
+  height: 500px;
+}
+.admin-answer-container textarea:focus{outline: none;}
+
+.admin-answer-container button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  background-color: #add8e6;;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, font-size 0.5s;
+}
+/* 1초 동안 천천히 늘려주기*/
+.admin-answer-container button:hover {
+  background-color: #87ceeb;
+}
