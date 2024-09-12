@@ -11,7 +11,7 @@
   
   <!-- 특정 게시글 보기 -->
   <select id="findPostById" parameterType="int" resultType="com.six.dto.Post">
-   SELECT * FROM Post WHERE post_no = #{postNo}
+   SELECT * FROM post WHERE post_no = #{postNo}
   </select>
  
    <!-- 공지사항 글쓰기 -->
@@ -37,7 +37,7 @@
 
 <!-- 공지사항 삭제하기 -->
 <delete id="postDelete">
- DELETE FROM Post
+ DELETE FROM post
  WHERE post_no = #{postNo}
 </delete>
 </mapper>

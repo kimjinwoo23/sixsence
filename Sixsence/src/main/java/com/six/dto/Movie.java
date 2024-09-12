@@ -17,4 +17,5 @@ public class Movie {
 	private String movieGenre; 
 	private String movieImage; 
 	private String movieDate;
+	private String movieScore;
 }

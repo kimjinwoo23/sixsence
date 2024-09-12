@@ -65,7 +65,8 @@ const ItemPurchase = () => {
     const inputUsingPoint = (value) => {
         //console.log("totalItemsPrice",totalItemsPrice)
         if (Number(value) > Number(totalItemsPrice)) {
-            setUsingPoint(totalItemsPrice)
+            //setUsingPoint(totalItemsPrice)
+            setUsingPoint(Number(totalItemsPrice) > Number(loginMember.memberPoint) ? Number(loginMember.memberPoint) : Number(totalItemsPrice))
         } else {
             setUsingPoint(Number(value) > Number(loginMember.memberPoint) ? Number(loginMember.memberPoint) : Number(value))
         }

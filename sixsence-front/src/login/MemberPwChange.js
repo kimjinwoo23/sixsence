@@ -1,4 +1,4 @@
-import { useNavigate, useLocation  } from "react-router-dom";
+import { useNavigate, useLocation, Link  } from "react-router-dom";
 import React, {useState} from "react";
 
 
@@ -70,24 +70,25 @@ const MemberPwChange = () => {
         <div className='grop'>
 
         <div className='input-value'>
-        <h1>비밀번호 변경</h1>
+        <h1 className="title-ID">비밀번호 변경</h1>
         </div>
         
         
            
        {!change ? (<div className='login-container4'>
         <div className='input-value'> 
-        <h6>고객님의 소중한 정보를 보호하기 위하여 새로운 비밀번호로 변경 후 서비스를 이용해 주세요.</h6>
+        <h6 className="input-pwMessage1">고객님의 소중한 정보를 보호하기 위하여</h6>
+        <h6 className="input-pwMessage1">새로운 비밀번호로 변경 후 서비스를 이용해 주세요.</h6>
         </div>
         
        {/*************************************************************************** 비밀번호 ********************************************************************************/ }
-       <div className="input-value">
-            <input type="password" value={memberPw} 
+       <div>
+            <input type="password" className="input-pwChange" value={memberPw} 
             onChange={e => setMemberPw(e.target.value)} placeholder="비밀번호를 입력해주세요." required/>
         </div>
-
-        <div className="input-value">
-            <input type="password" value={memberPwCheck} 
+        
+        <div >
+            <input type="password" className="input-pwChange" value={memberPwCheck} 
             onChange={e => setMemberPwCheck(e.target.value)} placeholder="비밀번호를 재 입력해주세요." required/>
         </div>
          
@@ -109,29 +110,18 @@ const MemberPwChange = () => {
                 )}
             </>
         )}
-         {/********************************************************************************************************************************************************************/ }
-
-        <div className="input-value">
-        <button className="btn btn-dark" onClick={handlePasswordChange }>비밀번호 변경</button>
-        </div>
-        
+        <button className="btn btn-dark input-pwChange1" onClick={handlePasswordChange }>비밀번호 변경</button>
         </div>) : 
         (   
-            <div>
-                <div className='input-value'> 
-                    <h6>고객님의 소중한 정보가 수정되었습니다. 서비스 이용에 감사드립니다.</h6>
-                </div>
-                
-                <div className='input-value'>
+            <div className="login-container4">
+                <h6 className="input-pwMessage1">고객님의 소중한 정보가 수정되었습니다.</h6>
+                <h6 className="input-pwMessage1">서비스 이용에 감사드립니다.</h6>
+
                 <h2>회원정보가 수정되었습니다.</h2>
+                <div className="pw-button">
+                <Link to="/"><button className="btn btn-dark">메인으로 돌아가기</button></Link>
+                <Link to="/mypageMain"><button className="btn btn-dark">마이페이지 이동</button></Link>
                 </div>
-
-                <div className="input-value">
-                <a href="/"><button className="btn btn-dark">메인으로 돌아가기</button></a>
-               
-                <a href="/mypageMain"><button className="btn btn-dark">마이페이지 이동</button></a>
-                </div>
-
             </div>
         )}
                 
@@ -141,3 +131,7 @@ const MemberPwChange = () => {
 }
 
 export default MemberPwChange;
+
+
+
+

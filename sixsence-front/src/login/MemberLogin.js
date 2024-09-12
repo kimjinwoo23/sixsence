@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom'; // useNavigate 훅 import
+import { useNavigate, Link } from 'react-router-dom'; // useNavigate 훅 import
 import LoginContext from './LoginContext';
 import NaverApi from './NaverApi';
 import GoogleLogin from './GoogleLogin';
@@ -62,16 +62,22 @@ const Login = () => {
     });
   };
 
+
+
+
   return (
+    <>
+    <h1 className="title-ID">아이디와 비밀번호를 입력해주세요.</h1>
+
+    
+
     <div className="login-container">
       {/* loginMember 값이 null 비로그인 View */}
+      <div className='login-body'>
+      <h5 className='login-message'>로그인 하시면 다양한 혜택을 받으실 수 있습니다.</h5>
       {!loginMember && (
         <>
-          <div className="title">
-            <h1>아이디와 비밀번호를 입력해주세요.</h1>
-            <h5>로그인 하시면 다양한 혜택을 받으실 수 있습니다.</h5>
-          </div>
-
+          
           <div className="input-value">
             <input
               type="text"
@@ -115,15 +121,17 @@ const Login = () => {
           </div>
 
           <div className='List'>
-            <a href="/memberIdFind">아이디 찾기</a> 
+            <Link to="/memberIdFind">아이디 찾기</Link> 
             <p> | </p> 
-            <a href="/passwordFind"> 비밀번호 찾기</a> 
+            <Link to="/passwordFind"> 비밀번호 찾기</Link> 
             <p> | </p> 
-            <a href="/registerCheck"> 회원가입</a>
+            <Link to="/registerCheck"> 회원가입</Link>
           </div>
         </>
       )}
+      </div>
     </div>
+   </>
   );
 };
 

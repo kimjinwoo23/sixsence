@@ -9,7 +9,7 @@
     </select>
 
     <insert id="insertMT" parameterType="com.six.dto.Moviepay">
-        INSERT INTO MOVIEPAY (
+        INSERT INTO moviepay (
             moviepay_adult,
             moviepay_child,
             moviepay_adultpay,

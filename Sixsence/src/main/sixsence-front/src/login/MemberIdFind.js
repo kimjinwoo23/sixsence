@@ -170,37 +170,26 @@ const isDateValid = (birthDate) => {
 
 
     return (
-        <div className='grop'>
+        <>
         {!change ? (
-            <div className="title-box">
-
-            <h1>아이디 찾기</h1>
-           
-            <h6>아이디가 기억나지 않으세요? 원하시는 방법을 선택해 아이디를  확인하실 수 있습니다.</h6>
-           
-            </div>
+            <h1 className="title-ID">아이디 찾기</h1>
         ) : (
-        <div>
-
+       
         <div className='input-value'>
-        <h1>아이디 확인</h1>
-        </div>
-        
-        <div className='input-value'>
-        <h6>입력하신 정보와 일치하는 아이디는 다음과 같습니다.</h6>
-        </div>
+        <h1 className="title-ID">아이디 확인</h1>
+       
         </div>
         )}
         
 
         {!change ? (
             <div className='login-container1'>
-
-            {/*-------------------------------------------------------------------------- 이름 --------------------------------------------------------------------------*/}
-        <div className="input-value">
+            <u><h6 className="id-message">아이디가 기억나지 않으세요?</h6></u>
+            <u><h6 className="id-message"> 인증을 통해 아이디를 확인하실 수 있습니다.</h6></u>
+        <div className="input-idFind">
             <input type="text" value={memberName} 
             onChange={nameHandleChange} placeholder="이름을 입력해주세요." required/>
-        </div>
+       
         {memberName && (
         <p style={{
                 color: nameRegex.test(memberName) ? "green" : "red",
@@ -217,10 +206,11 @@ const isDateValid = (birthDate) => {
                     : "언어: 한글 / 영어"}
         </p>
     )}
+    </div>
      {/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
             {/* ******************************************************************** 주민번호 ************************************************************************** */}
-            <div>
+            <div className="input-idFind">
             <input
                 type="text"
                 value={memberBirth}
@@ -240,12 +230,12 @@ const isDateValid = (birthDate) => {
     {/* ****************************************************************************************************************************************************************** */}
             
             {/*----------------------------------------------------------------------------전화번호-----------------------------------------------------------------------------------------*/}
-        <div className="input-value">
+        <div className="input-idFind">
             <input type="text" value={memberPhone} 
             onChange={phoneHandleChange} 
             placeholder="전화번호를 입력해주세요." required
             />
-        </div>
+        
         {memberPhone && (
                 <p
                     style={{
@@ -259,9 +249,10 @@ const isDateValid = (birthDate) => {
                         : "전화번호 010-****-****"}
                 </p>
             )}
+        </div>
     {/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
     
-            <div className="input-value">
+            <div className="input-idFind">
             <button className="btn btn-dark" onClick={idFind}>아이디 찾기</button>
             </div>
               
@@ -270,24 +261,21 @@ const isDateValid = (birthDate) => {
         ) : (
             <div>
         <div className='login-container2'>
-        <h2>{userInfo.memberName} 님의 아이디는 {userInfo.memberId} 입니다.</h2>
-        <div className="input-value">
-       
-        </div>
-
-        <div className="input-value">
-        <Link to="/memberLogin"><button className="btn btn-dark">로그인</button></Link>
-        </div>
-
-        <div className="input-value">
-        <Link to="/passwordFind"><button className="btn btn-dark">비밀번호 찾기</button></Link>
-        </div>
+            
+        <div className="id-findNow">
+            
+        <h6 className="login-message">입력하신 정보와 일치하는 아이디는 다음과 같습니다.</h6>
+        <h2 className="login-message"><u>{userInfo.memberName}</u> 님의 아이디는 <u>{userInfo.memberId}</u> 입니다.</h2>
         
+        <Link to="/memberLogin"><button className="btn btn-dark idFind">로그인</button></Link>
+        <Link to="/passwordFind"><button className="btn btn-dark idFind">비밀번호 찾기</button></Link>
+        </div>
+
         </div>
         </div>
         )}
         
-        </div>
+        </>
     )
 }
 

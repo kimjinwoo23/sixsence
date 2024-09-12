@@ -21,7 +21,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:666/api/movie/allMovie')
+      .get('/api/movie/allMovie')
       .then((res) => {
         console.log('Response data:', res.data);
         if (Array.isArray(res.data)) {

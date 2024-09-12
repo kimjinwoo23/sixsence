@@ -76,7 +76,7 @@ function PaymentSuccessPage() {
 
       try {
         // 결제 정보 저장
-        const response = await fetch("http://localhost:666/moviepay/insert", {
+        const response = await fetch("/moviepay/insert", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function PaymentSuccessPage() {
 
         // 회원 정보 업데이트
         const paycount = await fetch(
-          "http://localhost:666/moviepay/updatepayCount",
+          "/moviepay/updatepayCount",
           {
             method: "POST",
             headers: {

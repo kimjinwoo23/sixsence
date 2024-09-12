@@ -16,7 +16,7 @@ const MovieDetail = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:666/api/movie/selectMovie?movieNo=${movieNo}`)
+        axios.get(`/api/movie/selectMovie?movieNo=${movieNo}`)
             .then(response => {
                 setMovieData(response.data[0]);
             })
@@ -24,7 +24,7 @@ const MovieDetail = () => {
     }, [movieNo]);
 
     useEffect(() => {
-        axios.get(`http://localhost:666/api/comment/movie/${movieNo}`)
+        axios.get(`/api/comment/movie/${movieNo}`)
             .then(response => {
                 setReviews(response.data);
             })
@@ -48,7 +48,7 @@ const MovieDetail = () => {
             rating: rating,
             memberNo: loginMember.memberNo
         };
-        axios.post(`http://localhost:666/api/comment/insert`, {
+        axios.post(`/api/comment/insert`, {
             movieNo: movieNo,
             text: newReview.text,
             score: newReview.rating,
@@ -62,7 +62,7 @@ const MovieDetail = () => {
                 coid: response.data.coid  // 서버에서 받은 리뷰 ID
             };
             // 리뷰를 목록에 추가한 후 전체 리뷰 목록을 다시 불러옵니다.
-            axios.get(`http://localhost:666/api/comment/movie/${movieNo}`)
+            axios.get(`/api/comment/movie/${movieNo}`)
                 .then(res => {
                     setReviews(res.data);
                 })
@@ -80,7 +80,7 @@ const MovieDetail = () => {
             return;
         }
 
-        axios.delete(`http://localhost:666/api/comment/delete?coid=${coid}`)
+        axios.delete(`/api/comment/delete?coid=${coid}`)
         
         .then(response => {
             console.log("Review deleted successfully");

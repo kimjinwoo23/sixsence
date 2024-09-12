@@ -28,9 +28,8 @@ import MemberIdFind from './login/MemberIdFind';
 import MemberPwFind from './login/MemberPwFind';
 import MemberPwChange from './login/MemberPwChange';
 import LoginContext from './login/LoginContext';
-import GoogleSignUp from './login/GoogleSignUp.js';
-import NaverSignup from "./login/NaverSignup.js";
 import './css/Login.css';
+
 
 //오재진
 import Items from './store/Items';
@@ -97,14 +96,14 @@ function AppContent() {
 
 
 
+     <Route path="/"   element =  {   <Home />   } />
+     <Route path="/movie/:movieNo" element={<MovieDetail />} />
      <Route path='/memberLogin'    element= { <MemberLogin />  } />
      <Route path='/registerCheck'  element= { <RegisterCheck /> } />
      <Route path='/memberSignup'   element= { <MemberSignUp /> } />
      <Route path='/memberIdFind'   element= { <MemberIdFind />} />
      <Route path='/passwordFind'   element= { <MemberPwFind />} />
      <Route path='/passwordChange' element= { <MemberPwChange />} />
-     <Route path='/googleSignUp' element= { <GoogleSignUp />} />
-     <Route path='/signup/naver' element= { <NaverSignup />} />
      
      
      

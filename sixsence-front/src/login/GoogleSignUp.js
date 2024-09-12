@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useNavigate, useLocation  } from "react-router-dom";
+import { useNavigate, useLocation, Link  } from "react-router-dom";
 import AddressSearch from "./AddressSearch";
 import axios from "axios";
 import "../css/Google.css";
@@ -302,12 +302,12 @@ const getGender = (genderCode) => {
                         가입 여부 확인 페이지로 이동하시거나 홈으로 돌아가세요.
                     </p>
                     <div className="login-check-button-group">
-                        <a href="/registerCheck" className="login-check-btn">
+                        <Link to="/registerCheck" className="login-check-btn">
                             가입 여부 확인
-                        </a>
-                        <a href="/" className="login-check-btn login-check-home-btn">
+                        </Link>
+                        <Link to="/" className="login-check-btn login-check-home-btn">
                             Home
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>) : 

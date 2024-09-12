@@ -39,7 +39,7 @@ const AddressSearch = ({ onAddressChange }) => {
 
   return (
     <div>
-      <button className="btna btn-dark" onClick={openPostcode}>주소 검색</button>
+      <button className="btn btn-dark" onClick={openPostcode}>주소 검색</button>
       {address && (
         <div>
           <input

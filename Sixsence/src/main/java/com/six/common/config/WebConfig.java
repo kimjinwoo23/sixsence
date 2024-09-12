@@ -1,4 +1,4 @@
-package com.six.common.config;
+/*package com.six.common.config;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -24,3 +24,4 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 }
+*/

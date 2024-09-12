@@ -2,7 +2,7 @@
   "name": "sixsence-front",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:666",
+  "proxy": "http://localhost:6060",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

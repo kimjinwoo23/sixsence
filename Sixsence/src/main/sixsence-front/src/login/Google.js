@@ -8,7 +8,7 @@ const Google = ({ setLoginResult }) => {
     scope: "email profile",
     onSuccess: async ({ code }) => {
       try {
-        const response = await axios.post("http://localhost:666/auth/google/callback", { code });
+        const response = await axios.post("/auth/google/callback", { code });
         setLoginResult(response.data);
         console.log("r : ",response.data);
       } catch (error) {

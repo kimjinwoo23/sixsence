@@ -213,7 +213,7 @@ const Booking = () => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:666/moviepay/movies"
+          "/moviepay/movies"
         );
         setMovies(response.data);
         if (movieId) {
@@ -242,7 +242,7 @@ const Booking = () => {
           .replace(".", "");
 
         try {
-          const fetchURL = `http://localhost:666/moviepay/movieSeat/${movieNo}?viewDate=${formattedDate}&time=${selectedTime}`;
+          const fetchURL = `/moviepay/movieSeat/${movieNo}?viewDate=${formattedDate}&time=${selectedTime}`;
           const response = await fetch(fetchURL);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

@@ -9,7 +9,7 @@ const MovieChart = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get("http://localhost:666/moviepay/movies");
+        const response = await axios.get("/moviepay/movies");
         setMovieChart(response.data);
       } catch (err) {
         console.error("Error loading movie data: ", err);
@@ -60,12 +60,13 @@ const MovieChart = () => {
           <div key={movie.movieNo} className="moviechart-movies">
             <img src={movie.movieImage} alt={movie.movieTitle} />
             <h2>{movie.movieTitle}</h2>
-            <p>평점 : {movie.vote_average}</p>
-            <p>개봉일 : {movie.release_date}</p>
-            <a href={`/movie/${movie.movieNo}`} className="btnone">
+            <p>평점 : {movie.movieScore}</p> {/* 영화 점수 표시 */}
+            <p>상영 시간 : {movie.movieShowtime}</p> {/* 상영 시간 표시 */}
+            <p>개봉일 : {movie.movieDate}</p> {/* 개봉일 표시 */}
+            <a href={`/Movie/${movie.movieNo}`} className="btnone">
               상세보기
             </a>
-            <a href={`/movieboard-app?movieId=${movie.movieNo}`} className="btn">
+            <a href={`/Movieboard-app?movieId=${movie.movieNo}`} className="btn">
               예매하기
             </a>
           </div>

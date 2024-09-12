@@ -150,10 +150,13 @@ const birthHandleChange = (e) => {
     };
 
     return (
+        <>
+        <h1 className="title-ID">회원가입 여부 확인</h1>
         <div className="login-container5">
+            
             {!changeTrick ? (
                 <>
-                    <h1>회원가입 여부 확인</h1>
+                   
                     <div className="input-value">
             <input type="text" value={memberName} 
             onChange={nameHandleChange} placeholder="이름을 입력해주세요." required/>
@@ -242,6 +245,7 @@ const birthHandleChange = (e) => {
                 </>
             )}
         </div>
+        </>
     );
 };
 
